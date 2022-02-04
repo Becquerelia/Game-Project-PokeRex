@@ -11,19 +11,66 @@ body {
     background-color: darkblue;
     color: white;
     padding: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
     font-weight: bold;
-    margin-top: 150px;
+    margin-top: 80px;
+    margin-left: 220px;
     border-radius: 10px; 
   }
   
   .container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    margin: 50px;
   }
+
+  #pokeLeft {           
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+  }
+
+  #pokeRight {     
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pokeMargin {
+    margin-top: 40px;
+}
+
+#splash-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spaceElement {
+    margin-top: 40px;
+    text-align: center;
+}
+
+article {
+    margin-top: 20px;
+    padding: 0px 40px 20px;
+    background-color: beige;
+    border: 2px solid black;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+li {
+    text-align: left;
+}
+
+h3 {
+    text-align: center;
+}
   
   #my-canvas, #gameover-screen {
     display: none;

@@ -11,34 +11,70 @@
 </head>
 
 <body>
+   
     <div class = "container">
-        
-        <section id="splash-screen" class="container">
 
-            <img src="https://fontmeme.com/permalink/220204/42abd683142b804d1911a242f65eb0b3.png" alt="Game Title">
-            <img src="https://tinyurl.com/ironhack-pokemons/25.svg" alt="Pikachu">
-            <img src="https://tinyurl.com/ironhack-pokemons/94.svg" alt="Gengar">
-            <img src="https://tinyurl.com/ironhack-pokemons/4.svg" alt="Charmander">
-            <img src="https://tinyurl.com/ironhack-pokemons/7.svg" alt="Squirtle">
-            <img src="https://tinyurl.com/ironhack-pokemons/1.svg" alt="Bulbasaur">
-            <img src="https://tinyurl.com/ironhack-pokemons/133.svg" alt="Eevee">
-            <img src="https://tinyurl.com/ironhack-pokemons/151.svg" alt="Mew">
-            <br>
-            <button id="start-btn">START GAME</button>
+        <section id="pokeLeft">
+            <section class="pokeMargin">
+                <img src="https://tinyurl.com/ironhack-pokemons/25.svg" width="150px" alt="Pikachu">
+            </section>
+            <section class="pokeMargin">
+                <img src="https://tinyurl.com/ironhack-pokemons/4.svg" width="150px" alt="Charmander">
+            </section>
+            <section class="pokeMargin">
+                <img src="https://tinyurl.com/ironhack-pokemons/94.svg" width="150px" alt="Gengar">
+            </section>
+        </section>
+           
+        <section id="splash-screen">
+
+            <section>
+                <img src="https://fontmeme.com/permalink/220204/42abd683142b804d1911a242f65eb0b3.png" width="550px" alt="Game Title">
+            </section>
+
+            <section>
+                <button id="start-btn">START GAME</button>
+                <canvas id="my-canvas" width="1000" height="400"></canvas>
+                
+                <article> 
+                    <h2 class="spaceElement"> HOW TO PLAY?</h2> 
+                    <ul class="spaceElement">
+                        <li>Press the space bar to jump over the obstacles in your path.</li> 
+                        <li>The longer you hold space bar, the higher pokemon will jump.</li>
+                        <li>The longer you play, the higher score...</li>
+                        <li>...But the longer you play, the faster pokemon run also!</li>
+                        <li>Once you crash into something, the game is over.</li>                        
+                    </ul>
+                    <h3>Good luck!</h3>
+                </article>
+
+            </section>
 
         </section>
-
-        <canvas id="my-canvas" width="1000" height="400"></canvas>
 
         <section id="gameover-screen" class="container">
 
             <img src="https://fontmeme.com/permalink/220204/790405d704cf36d7640224939af167f7.png" alt=" Game Over">
             <br>
-            <button id="restart-btn">TRY AGAIN!</button>
+            <button id="restart-btn">TRY AGAIN!</button>            
 
         </section>
 
+        <section id="pokeRight">
+            <section class="pokeMargin">
+                <img src="https://tinyurl.com/ironhack-pokemons/7.svg" width="150px" alt="Squirtle">
+            </section>
+            <section class="pokeMargin">
+                <img src="https://tinyurl.com/ironhack-pokemons/1.svg" width="150px" alt="Bulbasaur">
+            </section>
+            <section class="pokeMargin">
+                <img src="https://tinyurl.com/ironhack-pokemons/133.svg" width="150px" alt="Eevee">
+            </section>
+        </section>        
+        
+    </div>   
 
+    <div>
     </div>
 
     <script src="./main.js"></script>
