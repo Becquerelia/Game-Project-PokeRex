@@ -16,7 +16,17 @@ body {
     font-weight: bold;
     margin-top: 80px;
     margin-left: 220px;
-    border-radius: 10px; 
+    border-radius: 10px;
+    cursor: pointer; 
+  }
+
+  button:active {
+    transform: scale(0.8);
+    transition-duration: 0.1s;
+  }
+
+  button:hover {
+    opacity: 0.5;
   }
   
   .container {
@@ -60,7 +70,7 @@ article {
     margin-top: 20px;
     padding: 0px 40px 20px;
     background-color: beige;
-    border: 2px solid black;
+    border: 3px dashed black;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
