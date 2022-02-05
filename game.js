@@ -2,7 +2,7 @@ class Game {
     constructor() {
         this.myBackground = new Image();
         this.myBackground.src = "./Images/fondojuego2.png";
-        this.pokemon = new Pokemon()        
+        this.pokemon = new Pokemon();        
     }
 
     clearCanvas = () => {
@@ -18,6 +18,7 @@ class Game {
         //1.Renovar canvas
         this.clearCanvas();
         //2.Mover elementos
+        this.pokemon.pokemonGravity();
         //3.Dibujar elementos
         this.drawBackground();
         this.pokemon.drawPokemon();       

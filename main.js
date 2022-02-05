@@ -16,6 +16,7 @@ const startGame = () => {
     canvas.style.display = "flex";
 
     newGame = new Game()
+    console.log(newGame)
     newGame.gameLoop()    
 
 }
@@ -23,4 +24,9 @@ const startGame = () => {
 //! ADD EVENT LISTENERS
 
 let startButton = document.querySelector("#start-btn");
-startButton.addEventListener("click", startGame)
+startButton.addEventListener("click", startGame);
+
+window.addEventListener("keydown", (event) => {
+    newGame.pokemon.pokemonJump(event)
+})
+
