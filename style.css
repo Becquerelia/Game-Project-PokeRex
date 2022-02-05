@@ -4,7 +4,9 @@ body {
   }
   
   #my-canvas {
-    background-color: darkgray;
+    background-color: bisque;
+    margin-top: 50px;
+    border: 5px solid black;
   }
   
   #start-btn, #restart-btn {

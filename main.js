@@ -12,11 +12,11 @@ let newGame;
 
 const startGame = () => {
 
-    splashScreen.style.display = none;
+    splashScreen.style.display = "none";
     canvas.style.display = "flex";
 
-    //newGame = newGame()
-    //newGame.gameLoop()
+    newGame = new Game()
+    newGame.gameLoop()    
 
 }
 
