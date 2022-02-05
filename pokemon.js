@@ -16,11 +16,9 @@ class Pokemon {
     }
 
     pokemonJump = (event) => {
-        if (event.key === "ArrowUp") {
+        if (event.code === "Space" && (this.y + this.height) < canvas.height) {
             this.y = this.y - this.jumpSpeed;
-        } //else if (this.y = (this.y * 3)) {
-            //continue;
-        //}
+        } 
     }
 
     pokemonGravity = () => {
