@@ -1,8 +1,8 @@
 class Game {
     constructor() {
         this.myBackground = new Image();
-        this.myBackground.src = "./Imágenes/fondojuego2.png";
-        this.pokemon = new Pokemon();        
+        this.myBackground.src = "./Images/fondojuego2.png";
+        this.pokemon = new Pokemon()        
     }
 
     clearCanvas = () => {
