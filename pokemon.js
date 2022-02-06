@@ -8,7 +8,7 @@ class Pokemon {
         this.img.src = "./Images/Pikachu.png" //Para GIF: https://gifer.com/en/5Q0v o https://gifer.com/en/2iiJ
         this.jumpSpeed = 180;
         this.groundPosition = 255;
-        this.gravitySpeed = 2;
+        this.gravitySpeed = 2.5;
     }
 
     drawPokemon = () => {        

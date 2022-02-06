@@ -1,7 +1,7 @@
-class Obstacles {
+class Snorlax {
     constructor() {
-        this.x = 500;
-        this.y = 240;
+        this.x = canvas.width;
+        this.y = 245;
         this.width = 110;
         this.height = 110;
         this.img = new Image()
@@ -9,12 +9,12 @@ class Obstacles {
     }
 
 
-    drawObstacles = () => {
+    drawSnorlax = () => {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 
-    //obstacleMove = () => {
-    //    this.x = this.x - 10;
-    //}
+    snorlaxMove = () => {
+        this.x = this.x - 5;
+    }
 
 }
