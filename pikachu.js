@@ -6,7 +6,7 @@ class Pikachu {
         this.height = 70;
         this.img = new Image()
         this.img.src = "./Images/Pikachu.png" //Para GIF: https://gifer.com/en/5Q0v o https://gifer.com/en/2iiJ
-        this.jumpSpeed = 180;
+        this.jumpSpeed = 200;
         this.groundPosition = 255;
         this.gravitySpeed = 2.5;
     }

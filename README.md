@@ -18,7 +18,7 @@ El objetivo consiste en que el pokémon continúe su recorrido durante el mayor 
 ## Data Structure
 ### main.js
 ### game.js
-### pokemon.js
+### pikachu.js
 ### snorlax.js
 ## States y States Transitions
 
@@ -36,10 +36,10 @@ El objetivo consiste en que el pokémon continúe su recorrido durante el mayor 
 - game - buildCanvas
 - game - updateCanvas
 - game - drawCanvas
-- pokemon - draw
-- pokemon - move
-- obstacles - draw
-- obstacles - move
+- pikachu - draw
+- pikachu - move
+- snorlax - draw
+- snorlax - move
 - game - addObstacle
 - game - checkCollision
 - game - GameOver
