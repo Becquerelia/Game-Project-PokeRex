@@ -1,9 +1,9 @@
 class Snorlax {
     constructor() {
         this.x = canvas.width;
-        this.y = 245;
-        this.width = 110;
-        this.height = 110;
+        this.y = 250;
+        this.width = 100;
+        this.height = 100;
         this.img = new Image()
         this.img.src = "./Images/Snorlax.png"
     }

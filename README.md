@@ -30,7 +30,7 @@ El objetivo consiste en que el pokémon continúe su recorrido durante el mayor 
 
 - main - buildDom
 - main - buildSplashScreen
-- main - addEventListener
+- main - addEventListener (Click)
 - main - buildGameScreen
 - main - buildGameOverScreen
 - game - startLoop
@@ -39,12 +39,20 @@ El objetivo consiste en que el pokémon continúe su recorrido durante el mayor 
 - game - drawCanvas
 - pikachu - draw
 - pikachu - move
+- game - addEventListener (Keydown)
 - snorlax - draw
 - snorlax - move
-- game - addObstacle
+- snorlax - spawn
+- balloon - draw
+- balloon - move
+- balloon - spawn
+- gastly - draw
+- gastly - move
+- gastly - spawn
+- game - addObstacles
 - game - checkCollision
 - game - GameOver
-- game - addEventListener
+
 ## Additional Links
 ### Trello
 
