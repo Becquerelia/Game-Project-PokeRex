@@ -1,5 +1,0 @@
-class Snorlax {
-    constructor() {
-        this
-    }
-}

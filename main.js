@@ -16,7 +16,6 @@ const startGame = () => {
     canvas.style.display = "flex";
 
     newGame = new Game()
-    console.log(newGame)
     newGame.gameLoop()    
 
 }

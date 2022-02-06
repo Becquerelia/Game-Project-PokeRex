@@ -2,7 +2,8 @@ class Game {
     constructor() {
         this.myBackground = new Image();
         this.myBackground.src = "./Images/fondojuego2.png";
-        this.pokemon = new Pokemon();        
+        this.pokemon = new Pokemon();
+        this.obstacles = new Obstacles();        
     }
 
     clearCanvas = () => {
@@ -21,7 +22,8 @@ class Game {
         this.pokemon.pokemonGravity();
         //3.Dibujar elementos
         this.drawBackground();
-        this.pokemon.drawPokemon();       
+        this.pokemon.drawPokemon();
+        this.obstacles.drawObstacles();       
         //4.Recursión
         requestAnimationFrame(this.gameLoop);
     }
