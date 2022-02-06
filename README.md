@@ -20,6 +20,7 @@ El objetivo consiste en que el pokémon continúe su recorrido durante el mayor 
 ### game.js
 ### pikachu.js
 ### snorlax.js
+### balloon.js
 ## States y States Transitions
 
 - splashScreen
