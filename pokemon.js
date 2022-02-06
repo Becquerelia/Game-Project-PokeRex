@@ -16,7 +16,7 @@ class Pokemon {
     }
 
     pokemonJump = (event) => {
-        if (event.code === "Space" && (this.y + this.height) < canvas.height) {
+        if (event.code === "Space" && (this.y - this.height - 10) > 5) {
             this.y = this.y - this.jumpSpeed;
         } 
     }

@@ -1,0 +1,5 @@
+class Snorlax {
+    constructor() {
+        this
+    }
+}
