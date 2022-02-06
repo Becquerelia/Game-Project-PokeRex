@@ -1,4 +1,4 @@
-class Pokemon {
+class Pikachu {
     constructor() {
         this.x = 150;
         this.y = 255;
@@ -11,17 +11,17 @@ class Pokemon {
         this.gravitySpeed = 2.5;
     }
 
-    drawPokemon = () => {        
+    drawPikachu = () => {        
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 
-    pokemonJump = (event) => {
+    pikachuJump = (event) => {
         if (event.code === "Space" && (this.y - this.height - 10) > 5) {
             this.y = this.y - this.jumpSpeed;
         } 
     }
 
-    pokemonGravity = () => {
+    pikachuGravity = () => {
         if (this.y < this.groundPosition) {
             this.y = this.y + this.gravitySpeed;
         }

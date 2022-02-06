@@ -2,7 +2,7 @@ class Game {
     constructor() {
         this.myBackground = new Image();
         this.myBackground.src = "./Images/fondojuego2.png";
-        this.pokemon = new Pokemon();
+        this.pikachu = new Pikachu();
         this.snorlaxArray = [new Snorlax()];        
     }
 
@@ -19,13 +19,13 @@ class Game {
         //1.Renovar canvas
         this.clearCanvas();
         //2.Mover elementos
-        this.pokemon.pokemonGravity();
+        this.pikachu.pikachuGravity();
         this.snorlaxArray.forEach((eachSnorlax) => {
             eachSnorlax.snorlaxMove();
         });
         //3.Dibujar elementos
         this.drawBackground();
-        this.pokemon.drawPokemon();
+        this.pikachu.drawPikachu();
         this.snorlaxArray.forEach((eachSnorlax) => {
             eachSnorlax.drawSnorlax();
         })      

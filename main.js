@@ -26,6 +26,6 @@ let startButton = document.querySelector("#start-btn");
 startButton.addEventListener("click", startGame);
 
 window.addEventListener("keydown", (event) => {
-    newGame.pokemon.pokemonJump(event)
+    newGame.pikachu.pikachuJump(event)
 })
 
