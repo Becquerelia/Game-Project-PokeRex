@@ -17,7 +17,7 @@ class Snorlax {
     }
 
     snorlaxMove = () => {
-        this.x = this.x - 4;        
+        this.x = this.x - 5;        
     }
 
 }

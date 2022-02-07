@@ -66,6 +66,10 @@ class Game {
         }
     }
 
+    finalScore = () => {
+        scoreBoard.innerText(this.score);
+    }
+
     pikachuCollision = (eachCollision) => {
         if (this.pikachu.x < eachCollision.x + eachCollision.width &&
             this.pikachu.x + this.pikachu.width > eachCollision.x &&
@@ -78,7 +82,7 @@ class Game {
                 canvas.style.display = "none";                
                 allSplashScreen.style.display = "none";
                 gameOverScreen.style.display = "flex";
-                scoreBoard.innerText(this.score.value);
+                this.finalScore();
         }        
     }
 
@@ -116,7 +120,7 @@ class Game {
                 ctx.fillStyle = "#FF0000";
                 ctx.fillText("Infected!", 350, 150);
         }        
-    }    
+    }  
 
     
     gameLoop = () => {        
