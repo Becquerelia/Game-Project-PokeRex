@@ -19,10 +19,7 @@ El objetivo consiste en que el pokémon continúe su recorrido durante el mayor 
 ### main.js
 ### game.js
 ### pikachu.js
-### snorlax.js
-### balloon.js
-### gastly.js
-### coronavirus.js
+### obstacles.js
 ## States y States Transitions
 
 - splashScreen
@@ -42,18 +39,9 @@ El objetivo consiste en que el pokémon continúe su recorrido durante el mayor 
 - pikachu - draw
 - pikachu - move
 - game - addEventListener (Keydown)
-- snorlax - draw
-- snorlax - move
-- snorlax - spawn
-- balloon - draw
-- balloon - move
-- balloon - spawn
-- gastly - draw
-- gastly - move
-- gastly - spawn
-- coronavirus - draw
-- coronavirus - move
-- coronavirus - spawn
+- obstacles - draw (snorlax, balloon, gastly, coronavirus)
+- obstacles - move (snorlax, balloon, gastly, coronavirus)
+- obstacles - spawn (snorlax, balloon, gastly, coronavirus)
 - game - addObstacles
 - game - checkCollision
 - game - GameOver

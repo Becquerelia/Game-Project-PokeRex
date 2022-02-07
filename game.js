@@ -62,6 +62,9 @@ class Game {
             this.pikachu.y < eachCollision.y + eachCollision.height &&
             this.pikachu.height + this.pikachu.y > eachCollision.y) {
                 this.isGameOn = false;
+                canvas.style.display = "none";                
+                allSplashScreen.style.display = "none";
+                gameOverScreen.style.display = "flex";
             }        
     }
 

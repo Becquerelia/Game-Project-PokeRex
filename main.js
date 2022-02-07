@@ -1,6 +1,7 @@
 //! GLOBAL VARIABLES
 
 let splashScreen = document.querySelector("#splash-screen-change");
+let allSplashScreen = document.querySelector("#splash-screen");
 let gameOverScreen = document.querySelector("#gameover-screen");
 let canvas = document.querySelector("#my-canvas");
 let ctx = canvas.getContext("2d");
