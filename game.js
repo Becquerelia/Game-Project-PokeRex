@@ -4,11 +4,14 @@ class Game {
         this.myBackground.src = "./Images/fondojuego2.png";
         this.pikachu = new Pikachu();
         this.snorlaxArray = [new Snorlax()];
-        this.snorlaxDistance = 600;
+        this.snorlaxDistance = 1000;
         this.balloonArray = [new Balloon(0)];
-        this.balloonDistance = 3200;
+        this.balloonDistance = 5200;
         this.gastlyArray = [new Gastly(0)];
-        this.gastlyDistance = 1100;         
+        this.gastlyDistance = 2100;
+        this.coronavirusArray = [new Coronavirus(0)];
+        this.coronavirusDistance = 3300; 
+        this.isGameOn = true;        
     }
 
     clearCanvas = () => {
@@ -45,6 +48,24 @@ class Game {
         }
     }
 
+    coronavirusSpawn = () => {
+        let lastCoronavirus = this.coronavirusArray[this.coronavirusArray.length - 1];
+        if (lastCoronavirus.x < (canvas.width - this.coronavirusDistance)) {
+            let newCoronavirus = new Coronavirus();
+            this.coronavirusArray.push(newCoronavirus);
+        }
+    }
+
+    collisionPikachuSnorlax = (eachCollision) => {
+        if (this.pikachu.x < eachCollision.x + eachCollision.width &&
+            this.pikachu.x + this.pikachu.width > eachCollision.x &&
+            this.pikachu.y < eachCollision.y + eachCollision.height &&
+            this.pikachu.height + this.pikachu.y > eachCollision.y) {
+                this.isGameOn = false;
+            }        
+    }
+
+    
     gameLoop = () => {        
 
         //1.Renovar canvas
@@ -52,19 +73,31 @@ class Game {
 
         //2.Mover elementos
         this.pikachu.pikachuGravity();
+       
         this.snorlaxArray.forEach((eachSnorlax) => {
             eachSnorlax.snorlaxMove();
         });
+        this.snorlaxSpawn();
+
         this.balloonArray.forEach((eachBalloon) => {
             eachBalloon.balloonMove();
         })
+        this.balloonSpawn();
+        
         this.gastlyArray.forEach((eachGastly) => {
             eachGastly.gastlyMove();
-        })
-        this.snorlaxSpawn();
-        this.balloonSpawn();
+        })        
         this.gastlySpawn();
 
+        this.coronavirusArray.forEach((eachCoronavirus) => {
+            eachCoronavirus.coronavirusMove();
+        })        
+        this.coronavirusSpawn();
+
+        this.snorlaxArray.forEach((eachSnorlax) => {
+            this.collisionPikachuSnorlax(eachSnorlax);
+        })
+        
         //3.Dibujar elementos
         this.drawBackground();
         this.pikachu.drawPikachu();
@@ -76,10 +109,16 @@ class Game {
         })
         this.gastlyArray.forEach((eachGastly) => {
             eachGastly.drawGastly();
-        })      
+        })
+        this.coronavirusArray.forEach((eachCoronavirus) => {
+            eachCoronavirus.drawCoronavirus();
+        })            
 
         //4.Recursión
-        requestAnimationFrame(this.gameLoop);
+        if (this.isGameOn) {
+            requestAnimationFrame(this.gameLoop);
+        }
+        
     }
 
 }
