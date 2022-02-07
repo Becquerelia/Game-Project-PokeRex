@@ -1,14 +1,16 @@
 class Game {
     constructor() {
         this.myBackground = new Image();
-        this.myBackground.src = "./Images/fondojuego2.png";
+        this.myBackground.src = "./Images/fondo.png";
         this.pikachu = new Pikachu();
         this.snorlaxArray = [new Snorlax ()];
         this.snorlaxDistance = 1000;
         this.balloonArray = [new Balloon (0)];
         this.balloonDistance = 4200;
         this.cloudArray = [new Cloud ()];
-        this.cloudDistance = 2100;
+        this.cloudDistance = 800;
+        this.stratocumulusArray = [new Stratocumulus ()];
+        this.stratocumulusDistance = 800;
         this.coronavirusArray = [new Coronavirus(0)];
         this.coronavirusDistance = 3300;
         this.score = 0; 
@@ -34,7 +36,7 @@ class Game {
     balloonSpawn = () => {
         let lastBalloon = this.balloonArray[this.balloonArray.length -1];
         if (lastBalloon.x < (canvas.width - this.balloonDistance)) {
-            let randomHeight = Math.random() * 100; 
+            let randomHeight = Math.random() * 120; 
             let newBalloon = new Balloon(randomHeight);
             this.balloonArray.push(newBalloon);
         }
@@ -45,6 +47,14 @@ class Game {
         if (lastCloud.x < (canvas.width - this.cloudDistance)) {            
             let newCloud = new Cloud ();
             this.cloudArray.push(newCloud);
+        }
+    }
+
+    stratocumulusSpawn = () => {
+        let lastStratocumulus = this.stratocumulusArray[this.stratocumulusArray.length - 1];
+        if (lastStratocumulus.x < (canvas.width - this.stratocumulusDistance)) {            
+            let newStratocumulus = new Stratocumulus ();
+            this.stratocumulusArray.push(newStratocumulus);
         }
     }
 
@@ -62,6 +72,9 @@ class Game {
             this.pikachu.y < eachCollision.y + eachCollision.height &&
             this.pikachu.height + this.pikachu.y > eachCollision.y) {
                 this.isGameOn = false;
+                gameSound.pause();
+                gameOverSound.load();
+                gameOverSound.play();
                 canvas.style.display = "none";                
                 allSplashScreen.style.display = "none";
                 gameOverScreen.style.display = "flex";
@@ -87,12 +100,23 @@ class Game {
             this.pikachu.y < eachCollision.y + eachCollision.height &&
             this.pikachu.height + this.pikachu.y > eachCollision.y) {
                 this.score -= 5;
+                pikaInfectionSound.play();
                 ctx.font = "50px impact";
                 ctx.fillStyle = "#000000";
                 ctx.fillText("Infected!", 350, 150);
         }        
     }
-    
+
+    coronavirusInfection = (eachCollision) => {
+        if (this.pikachu.x < eachCollision.x + eachCollision.width &&
+            this.pikachu.x + this.pikachu.width > eachCollision.x &&
+            this.pikachu.y < eachCollision.y + eachCollision.height &&
+            this.pikachu.height + this.pikachu.y > eachCollision.y) {                
+                ctx.font = "60px impact";
+                ctx.fillStyle = "#FF0000";
+                ctx.fillText("Infected!", 350, 150);
+        }        
+    }    
 
     
     gameLoop = () => {        
@@ -117,6 +141,11 @@ class Game {
             eachCloud.cloudMove();
         })        
         this.cloudSpawn();
+
+        this.stratocumulusArray.forEach((eachStratocumulus) => {
+            eachStratocumulus.stratocumulusMove();
+        })        
+        this.stratocumulusSpawn();
 
         this.coronavirusArray.forEach((eachCoronavirus) => {
             eachCoronavirus.coronavirusMove();
@@ -147,10 +176,16 @@ class Game {
         this.cloudArray.forEach((eachCloud) => {
             eachCloud.drawCloud();
         })
+        this.stratocumulusArray.forEach((eachStratocumulus) => {
+            eachStratocumulus.drawStratocumulus();
+        })
         this.coronavirusArray.forEach((eachCoronavirus) => {
             eachCoronavirus.drawCoronavirus();
         })
-        this.counterScore();            
+        this.coronavirusArray.forEach((eachCoronavirus) => {
+            this.coronavirusInfection(eachCoronavirus);
+        })
+        this.counterScore();           
 
         //4.Recursión
         if (this.isGameOn) {

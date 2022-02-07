@@ -17,7 +17,7 @@ class Snorlax {
     }
 
     snorlaxMove = () => {
-        this.x = this.x - 5;        
+        this.x = this.x - 4;        
     }
 
 }
@@ -27,10 +27,10 @@ class Snorlax {
 
 class Balloon {
     constructor(positionY) {
-        this.x = canvas.width + 700;
+        this.x = canvas.width + 1500;
         this.y = positionY;
-        this.width = 70;
-        this.height = 70;
+        this.width = 100;
+        this.height = 100;
         this.img = new Image()
         this.img.src = "./Images/rocketballoon.png"
     }
@@ -41,31 +41,7 @@ class Balloon {
     }
 
     balloonMove = () => {
-        this.x = this.x - 5;
-    }
-
-}
-
-
-//CLOUDS:
-
-class Cloud {
-    constructor() {
-        this.x = 400;
-        this.y = 80;
-        this.width = 50;
-        this.height = 50;
-        this.img = new Image()
-        this.img.src = "./Images/Cloud.png"
-    }
-
-
-    drawCloud = () => {
-        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-    }
-
-    cloudMove = () => {
-        this.x = this.x - 0.1;
+        this.x = this.x - 6;
     }
 
 }
@@ -76,7 +52,7 @@ class Cloud {
 class Coronavirus {
     constructor() {
         this.x = canvas.width + 3600;
-        this.y = 230;
+        this.y = 240;
         this.width = 40;
         this.height = 40;
         this.img = new Image()
@@ -93,5 +69,4 @@ class Coronavirus {
     }
 
 }
-
 
