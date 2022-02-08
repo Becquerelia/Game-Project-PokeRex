@@ -6,7 +6,7 @@ class Game {
         this.snorlaxArray = [new Snorlax ()];
         this.snorlaxDistance = 1000;
         this.balloonArray = [new Balloon (0)];
-        this.balloonDistance = 4200;
+        this.balloonDistance = 4000;
         this.cloudArray = [new Cloud ()];
         this.cloudDistance = 800;
         this.stratocumulusArray = [new Stratocumulus ()];
@@ -29,7 +29,10 @@ class Game {
         let lastSnorlax = this.snorlaxArray[this.snorlaxArray.length - 1];
         if (lastSnorlax.x < (canvas.width - this.snorlaxDistance)) {
             let newSnorlax = new Snorlax();
-            this.snorlaxArray.push(newSnorlax);
+            this.snorlaxArray.push(newSnorlax);            
+        }
+        if (this.snorlaxArray.lenght === 3) {            
+            this.snorlaxArray.shift(this.snorlaxArray[0]);            
         }        
     }
 
@@ -65,11 +68,7 @@ class Game {
             this.coronavirusArray.push(newCoronavirus);
         }
     }
-
-    finalScore = () => {
-        scoreBoard.innerText(this.score);
-    }
-
+   
     pikachuCollision = (eachCollision) => {
         if (this.pikachu.x < eachCollision.x + eachCollision.width &&
             this.pikachu.x + this.pikachu.width > eachCollision.x &&
@@ -82,10 +81,31 @@ class Game {
                 canvas.style.display = "none";                
                 allSplashScreen.style.display = "none";
                 gameOverScreen.style.display = "flex";
-                this.finalScore();
+                scoreBoard.innerText = this.score;
+                
         }        
     }
 
+    gameDifficult = () => {
+        if (this.score >= 150 && this.score <= 299) {
+            this.snorlaxArray.forEach((eachSnorlax) => {
+            eachSnorlax.snorlaxSpeed = 6;
+            })
+        } else if (this.score >= 300 && this.score <= 899) {
+            this.snorlaxArray.forEach((eachSnorlax) => {
+            eachSnorlax.snorlaxSpeed = 7;
+               })
+        } else if (this.score >= 900 && this.score <= 1999) {
+            this.snorlaxArray.forEach((eachSnorlax) => {
+            eachSnorlax.snorlaxSpeed = 8;
+                })
+        } else if (this.score >= 2000) {
+            this.snorlaxArray.forEach((eachSnorlax) => {
+            eachSnorlax.snorlaxSpeed = 11;
+                })
+        }        
+    }
+          
     counterScore = () => {
         ctx.font = "30px impact";
         ctx.fillStyle = "#000000";
@@ -94,6 +114,14 @@ class Game {
         this.snorlaxArray.forEach((eachSnorlax) => {
             if (eachSnorlax.x === 0) {
                 this.score += 50;
+            } else if (eachSnorlax.x === 4){
+                this.score += 100;
+            } else if (eachSnorlax.x === 3){
+                this.score += 200;
+            } else if (eachSnorlax.x === 2){
+                this.score += 300;
+            } else if (eachSnorlax.x > 0 && eachSnorlax.x < 2){
+                this.score += 300;
             }
         })
     }
@@ -167,6 +195,8 @@ class Game {
         this.coronavirusArray.forEach((eachCoronavirus) => {
             this.coronavirusCollision(eachCoronavirus);
         })
+
+        this.gameDifficult();
         
         //3.Dibujar elementos
         this.drawBackground();

@@ -9,6 +9,7 @@ class Snorlax {
         this.height = 85;
         this.img = new Image()
         this.img.src = "./Images/SleepingSnorlax.png"
+        this.snorlaxSpeed = 5;
     }
 
 
@@ -17,7 +18,7 @@ class Snorlax {
     }
 
     snorlaxMove = () => {
-        this.x = this.x - 5;        
+        this.x = this.x - this.snorlaxSpeed;        
     }
 
 }
@@ -41,7 +42,7 @@ class Balloon {
     }
 
     balloonMove = () => {
-        this.x = this.x - 6;
+        this.x = this.x - 8;
     }
 
 }
