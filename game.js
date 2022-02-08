@@ -83,8 +83,7 @@ class Game {
                 canvas.style.display = "none";                
                 allSplashScreen.style.display = "none";
                 gameOverScreen.style.display = "flex";
-                scoreBoard.innerText = this.score;
-                
+                scoreBoard.innerText = this.score;                
         }        
     }
 
@@ -109,9 +108,9 @@ class Game {
     }
           
     counterScore = () => {
-        ctx.font = "30px impact";
+        ctx.font = "40px impact";
         ctx.fillStyle = "#000000";
-        ctx.fillText(this.score, 780, 40);
+        ctx.fillText(this.score, 750, 50);
 
         this.snorlaxArray.forEach((eachSnorlax) => {
             if (eachSnorlax.x === 0) {
@@ -153,14 +152,18 @@ class Game {
     }
     
     pikachuAnimation = () => {
-        this.animation ++
-              
+        this.animation ++        
+       
        if (this.animation % 10 === 0) {
             if (this.pikachu.realPikachu === this.pikachu.pikachu1) {
                 this.pikachu.realPikachu = this.pikachu.pikachu2; 
             } else {
                 this.pikachu.realPikachu = this.pikachu.pikachu1;
             }
+        }
+
+        if (this.pikachu.y !== this.pikachu.groundPosition) {
+            this.pikachu.realPikachu = this.pikachu.pikachu2;            
         }
     }
 

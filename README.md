@@ -3,7 +3,7 @@
 
 PokéRex es un sencillo juego inspirado en el clásico dinousaurio T-Rex de Chrome que incluye temática de Pokémon. La mecánica del juego es sencilla: el jugador debe hacer saltar a su pokémon para esquivar los obstáculos que encontrará a lo largo de su recorrido, evitando chocar con ninguno de ellos.
 
-El control del juego se reducen únicamente a la barra espaciadora del teclado, la cual hará que el pokémon salte cada vez que sea pulsada por el jugador.
+El control del juego se reduce únicamente a la barra espaciadora del teclado, la cual hará que el pokémon salte cada vez que sea pulsada por el jugador.
 
 El objetivo consiste en que el pokémon continúe su recorrido durante el mayor tiempo posible, siendo este tiempo proporcional a la cantidad de puntos que conseguirá el jugador en su contador. Si el pokémon choca con alguno de los obstáculos durante su recorrido, finaliza el juego.
 ## MVP

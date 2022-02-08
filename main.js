@@ -5,6 +5,7 @@ let allSplashScreen = document.querySelector("#splash-screen");
 let gameOverScreen = document.querySelector("#gameover-screen");
 let startButton = document.querySelector("#start-btn");
 let restartButton = document.querySelector("#restart-btn");
+let goHomeButton = document.querySelector(".goHome");
 let scoreBoard = document.querySelector("#points span");
 let canvas = document.querySelector("#my-canvas");
 let ctx = canvas.getContext("2d");
@@ -40,6 +41,7 @@ const startGame = () => {
 
     splashScreen.style.display = "none";
     canvas.style.display = "flex";
+    gameSound.load();
     gameSound.play();
 
     newGame = new Game()
@@ -56,8 +58,7 @@ window.addEventListener("keydown", (event) => {
     newGame.pikachu.pikachuJump(event)
 })
 
-restartButton.addEventListener("click", () => {
-    //ocultar pantallas
+restartButton.addEventListener("click", () => {    
     newGame = new Game();
 });
 
@@ -72,5 +73,12 @@ restartButton.addEventListener("click", () => {
     gameSound.load();
     gameSound.play();
     newGame.gameLoop();    
+})
+
+goHomeButton.addEventListener("click", () => {
+    gameOverScreen.style.display = "none";
+    gameOverSound.pause();    
+    allSplashScreen.style.display = "flex";
+    splashScreen.style.display = "flex";    
 })
 
