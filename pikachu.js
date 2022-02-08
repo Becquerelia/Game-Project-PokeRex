@@ -4,15 +4,26 @@ class Pikachu {
         this.y = 270;
         this.width = 70;
         this.height = 55;
-        this.img = new Image()
-        this.img.src = "./Images/Pikarun.gif" //Para GIF: https://gifer.com/en/5Q0v o https://gifer.com/en/2iiJ
+        this.pikachu1 = new Image ();
+        this.pikachu1.src = "./Images/pikagif1.gif"
+        this.pikachu2 = new Image ();
+        this.pikachu2.src = "./Images/pikagif2.gif"
+        this.realPikachu = this.pikachu1;
         this.jumpSpeed = 200;
         this.groundPosition = 270;
         this.gravitySpeed = 2.5;
     }
 
     drawPikachu = () => {        
-        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+        ctx.drawImage(this.realPikachu, this.x, this.y, this.width, this.height);
+    }
+
+    drawPikachu1 = () => {        
+        ctx.drawImage(this.pikachu1, this.x, this.y, this.width, this.height);
+    }
+
+    drawPikachu2 = () => {        
+        ctx.drawImage(this.pikachu2, this.x, this.y, this.width, this.height);
     }
 
     pikachuJump = (event) => {

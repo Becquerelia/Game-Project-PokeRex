@@ -13,8 +13,10 @@ class Game {
         this.stratocumulusDistance = 800;
         this.coronavirusArray = [new Coronavirus(0)];
         this.coronavirusDistance = 3300;
-        this.score = 0; 
-        this.isGameOn = true;        
+        this.score = 0;
+        this.animation = 0; 
+        this.isGameOn = true;                     
+        
     }
 
     clearCanvas = () => {
@@ -148,7 +150,19 @@ class Game {
                 ctx.fillStyle = "#FF0000";
                 ctx.fillText("Infected!", 350, 150);
         }        
-    }  
+    }
+    
+    pikachuAnimation = () => {
+        this.animation ++
+              
+       if (this.animation % 10 === 0) {
+            if (this.pikachu.realPikachu === this.pikachu.pikachu1) {
+                this.pikachu.realPikachu = this.pikachu.pikachu2; 
+            } else {
+                this.pikachu.realPikachu = this.pikachu.pikachu1;
+            }
+        }
+    }
 
     
     gameLoop = () => {        
@@ -200,6 +214,7 @@ class Game {
         
         //3.Dibujar elementos
         this.drawBackground();
+        this.pikachuAnimation();
         this.pikachu.drawPikachu();
         this.snorlaxArray.forEach((eachSnorlax) => {
             eachSnorlax.drawSnorlax();
