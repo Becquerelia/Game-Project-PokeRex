@@ -4,7 +4,7 @@ https://becquerelia.github.io/Game-Project-PokeRex/
 
 ## Description
 
-PokeRex is a simple game inspired by classic Chrome T-Rex dinosaur but with Pokemon theme. The mechanic of game is simple: player must stand up their Pokemon running and jumping to avoid different obstacles that will appear along the way.
+PokeRex is a simple game inspired by classic Chrome T-Rex dinosaur but with Pokemon theme. The mechanic of game is simple: player must resist with their Pokemon running and jumping to avoid different obstacles that will appear along the way.
 
 Game controls is only about space bar key, which will make the pokemon jump every time it's pressed by the player.
 

@@ -15,7 +15,7 @@ class Game {
         this.stratocumulusArray = [new Stratocumulus ()];
         this.stratocumulusDistance = 800;
         this.coronavirusArray = [new Coronavirus(0)];
-        this.coronavirusDistance = 3300;
+        this.coronavirusDistance = 500;
         this.score = 0;
         this.animation = 0; 
         this.isGameOn = true;                     
@@ -75,7 +75,8 @@ class Game {
     coronavirusSpawn = () => {
         let lastCoronavirus = this.coronavirusArray[this.coronavirusArray.length - 1];
         if (lastCoronavirus.x < (canvas.width - this.coronavirusDistance)) {
-            let newCoronavirus = new Coronavirus();
+            let randomHeight = Math.random() * 300;
+            let newCoronavirus = new Coronavirus(randomHeight);
             this.coronavirusArray.push(newCoronavirus);
         }
     }
@@ -103,7 +104,7 @@ class Game {
             this.pikachu.x + this.pikachu.width > eachCollision.x &&
             this.pikachu.y < eachCollision.y + eachCollision.height &&
             this.pikachu.height + this.pikachu.y > eachCollision.y) {
-                this.score -= 5;
+                this.score -= 2;
                 pikaInfectionSound.play();
                 ctx.font = "50px impact";
                 ctx.fillStyle = "#000000";
