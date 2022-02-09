@@ -1,7 +1,10 @@
 
-//CLOUD:
+//! SINGLE CLOUD ELEMENT:
 
 class Cloud {
+
+    //!PROPERTIES
+
     constructor() {
         this.x = 300;
         this.y = 80;
@@ -11,21 +14,28 @@ class Cloud {
         this.img.src = "./Images/Cloud.png"
     }
 
+    //!METHODS
+
+    //SINGLE CLOUD DRAW
 
     drawCloud = () => {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 
+    //SINGLE CLOUD MOVEMENT
+
     cloudMove = () => {
         this.x = this.x - 0.1;
     }
-
 }
 
 
-//STRATOCUMULUS:
+//! STRATOCUMULUS ELEMENT:
 
 class Stratocumulus {
+
+    //!PROPERTIES
+
     constructor() {
         this.x = 800;
         this.y = 110;
@@ -35,17 +45,19 @@ class Stratocumulus {
         this.img.src = "./Images/Stratocumulus.png"
     }
 
+    //!METHODS
+
+    //STRATOCUMULUS DRAW
 
     drawStratocumulus = () => {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 
+    //STRATOCUMULUS MOVEMENT
+
     stratocumulusMove = () => {
         this.x = this.x - 0.1;
     }
-
 }
-
-//
 
 

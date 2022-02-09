@@ -1,5 +1,8 @@
 class Game {
     constructor() {
+
+        //!PROPERTIES
+
         this.myBackground = new Image();
         this.myBackground.src = "./Images/fondo.png";
         this.pikachu = new Pikachu();
@@ -19,6 +22,10 @@ class Game {
         
     }
 
+    //!METHODS
+
+    //CANVAS & BACKGROUND
+
     clearCanvas = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);        
     }
@@ -26,6 +33,8 @@ class Game {
     drawBackground = () => {
         ctx.drawImage(this.myBackground, 0, 0, canvas.width, canvas.height);
     }
+
+    //OBSTACLES & NATURE ELEMENTS SPAWN
 
     snorlaxSpawn = () => {
         let lastSnorlax = this.snorlaxArray[this.snorlaxArray.length - 1];
@@ -70,7 +79,9 @@ class Game {
             this.coronavirusArray.push(newCoronavirus);
         }
     }
-   
+    
+    //COLISSIONS
+
     pikachuCollision = (eachCollision) => {
         if (this.pikachu.x < eachCollision.x + eachCollision.width &&
             this.pikachu.x + this.pikachu.width > eachCollision.x &&
@@ -86,47 +97,7 @@ class Game {
                 scoreBoard.innerText = this.score;                
         }        
     }
-
-    gameDifficult = () => {
-        if (this.score >= 150 && this.score <= 299) {
-            this.snorlaxArray.forEach((eachSnorlax) => {
-            eachSnorlax.snorlaxSpeed = 6;
-            })
-        } else if (this.score >= 300 && this.score <= 899) {
-            this.snorlaxArray.forEach((eachSnorlax) => {
-            eachSnorlax.snorlaxSpeed = 7;
-               })
-        } else if (this.score >= 900 && this.score <= 1999) {
-            this.snorlaxArray.forEach((eachSnorlax) => {
-            eachSnorlax.snorlaxSpeed = 8;
-                })
-        } else if (this.score >= 2000) {
-            this.snorlaxArray.forEach((eachSnorlax) => {
-            eachSnorlax.snorlaxSpeed = 11;
-                })
-        }        
-    }
-          
-    counterScore = () => {
-        ctx.font = "40px impact";
-        ctx.fillStyle = "#000000";
-        ctx.fillText(this.score, 750, 50);
-
-        this.snorlaxArray.forEach((eachSnorlax) => {
-            if (eachSnorlax.x === 0) {
-                this.score += 50;
-            } else if (eachSnorlax.x === 4){
-                this.score += 100;
-            } else if (eachSnorlax.x === 3){
-                this.score += 200;
-            } else if (eachSnorlax.x === 2){
-                this.score += 300;
-            } else if (eachSnorlax.x > 0 && eachSnorlax.x < 2){
-                this.score += 300;
-            }
-        })
-    }
-
+   
     coronavirusCollision = (eachCollision) => {
         if (this.pikachu.x < eachCollision.x + eachCollision.width &&
             this.pikachu.x + this.pikachu.width > eachCollision.x &&
@@ -150,6 +121,52 @@ class Game {
                 ctx.fillText("Infected!", 350, 150);
         }        
     }
+
+    //GAME DIFFICULT (SPEED)
+
+    gameDifficult = () => {
+        if (this.score >= 150 && this.score <= 299) {
+            this.snorlaxArray.forEach((eachSnorlax) => {
+            eachSnorlax.snorlaxSpeed = 6;
+            })
+        } else if (this.score >= 300 && this.score <= 899) {
+            this.snorlaxArray.forEach((eachSnorlax) => {
+            eachSnorlax.snorlaxSpeed = 7;
+               })
+        } else if (this.score >= 900 && this.score <= 1999) {
+            this.snorlaxArray.forEach((eachSnorlax) => {
+            eachSnorlax.snorlaxSpeed = 8;
+                })
+        } else if (this.score >= 2000) {
+            this.snorlaxArray.forEach((eachSnorlax) => {
+            eachSnorlax.snorlaxSpeed = 11;
+                })
+        }        
+    }
+
+    //GAME SCORE
+          
+    counterScore = () => {
+        ctx.font = "40px impact";
+        ctx.fillStyle = "#000000";
+        ctx.fillText(this.score, 750, 50);
+
+        this.snorlaxArray.forEach((eachSnorlax) => {
+            if (eachSnorlax.x === 0) {
+                this.score += 50;
+            } else if (eachSnorlax.x === 4){
+                this.score += 100;
+            } else if (eachSnorlax.x === 3){
+                this.score += 200;
+            } else if (eachSnorlax.x === 2){
+                this.score += 300;
+            } else if (eachSnorlax.x > 0 && eachSnorlax.x < 2){
+                this.score += 300;
+            }
+        })
+    }
+
+    // PIKACHU ANIMATION (RUN EFFECT)
     
     pikachuAnimation = () => {
         this.animation ++        
@@ -167,38 +184,46 @@ class Game {
         }
     }
 
+    //!GAME LOOP
     
     gameLoop = () => {        
 
-        //1.Renovar canvas
+        //1.CANVAS CLEANING
+
         this.clearCanvas();
 
-        //2.Mover elementos
+        //2.ELEMENTS MOVEMENTS & ACTIONS
+
         this.pikachu.pikachuGravity();
        
         this.snorlaxArray.forEach((eachSnorlax) => {
             eachSnorlax.snorlaxMove();
         });
+
         this.snorlaxSpawn();
 
         this.balloonArray.forEach((eachBalloon) => {
             eachBalloon.balloonMove();
         })
+
         this.balloonSpawn();
         
         this.cloudArray.forEach((eachCloud) => {
             eachCloud.cloudMove();
-        })        
+        })  
+
         this.cloudSpawn();
 
         this.stratocumulusArray.forEach((eachStratocumulus) => {
             eachStratocumulus.stratocumulusMove();
-        })        
+        })  
+
         this.stratocumulusSpawn();
 
         this.coronavirusArray.forEach((eachCoronavirus) => {
             eachCoronavirus.coronavirusMove();
-        })        
+        })  
+
         this.coronavirusSpawn();
 
         this.snorlaxArray.forEach((eachSnorlax) => {
@@ -215,35 +240,45 @@ class Game {
 
         this.gameDifficult();
         
-        //3.Dibujar elementos
+        //3.ELEMENTS DRAWNING
+
         this.drawBackground();
+
         this.pikachuAnimation();
+
         this.pikachu.drawPikachu();
+
         this.snorlaxArray.forEach((eachSnorlax) => {
             eachSnorlax.drawSnorlax();
         })
+
         this.balloonArray.forEach((eachBalloon) => {
             eachBalloon.drawBalloon();
         })
+
         this.cloudArray.forEach((eachCloud) => {
             eachCloud.drawCloud();
         })
+
         this.stratocumulusArray.forEach((eachStratocumulus) => {
             eachStratocumulus.drawStratocumulus();
         })
+
         this.coronavirusArray.forEach((eachCoronavirus) => {
             eachCoronavirus.drawCoronavirus();
         })
+
         this.coronavirusArray.forEach((eachCoronavirus) => {
             this.coronavirusInfection(eachCoronavirus);
         })
+
         this.counterScore();           
 
-        //4.Recursión
+        //4.RECURSION
+
         if (this.isGameOn) {
             requestAnimationFrame(this.gameLoop);
         }
         
     }
-
 }

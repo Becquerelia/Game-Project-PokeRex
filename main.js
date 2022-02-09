@@ -13,21 +13,25 @@ let newGame;
 
 //MUSIC:
 
+//GAME SOUND
 let gameSound = new Audio("./Music/LeaderBattleGameOn.mp4");
 gameSound.volume = 0.1;
 gameSound.preload ="auto";
 gameSound.load();
 
+//GAMEOVER SOUND
 let gameOverSound = new Audio ("./Music/RivalAppearsGameOver.mp3");
 gameOverSound.volume = 0.1;
 gameOverSound.preload ="auto";
 gameOverSound.load();
 
+//PIKACHU JUMPING SOUND
 let pikaSound = new Audio ("./Music/Pika.mp3");
 pikaSound.volume = 0.5;
 pikaSound.preload ="auto";
 pikaSound.load();
 
+//PIKACHU INFECTED SOUND
 let pikaInfectionSound = new Audio ("./Music/Pikainfection.mp3");
 pikaInfectionSound.volume = 0.9;
 pikaInfectionSound.preload ="auto";
@@ -51,33 +55,28 @@ const startGame = () => {
 
 //! ADD EVENT LISTENERS
 
-
+//START GAME
 startButton.addEventListener("click", startGame);
 
+
+//CONTROLS (SPACE BAR KEY)
 window.addEventListener("keydown", (event) => {
     newGame.pikachu.pikachuJump(event)
 })
 
-window.addEventListener("click", () => {
-    newGame.pikachu.pikachuJumpClick();
-})
-
-restartButton.addEventListener("click", () => {    
-    newGame = new Game();
-});
-
+//RESTART GAME
 restartButton.addEventListener("click", () => {
-
+    newGame = new Game();
     gameOverScreen.style.display = "none";
     allSplashScreen.style.display = "flex";
-    canvas.style.display = "flex";
-
-    gameObj = new Game();
+    canvas.style.display = "flex";    
     gameOverSound.pause();
     gameSound.load();
     gameSound.play();
     newGame.gameLoop();    
 })
+
+//BACK HOME
 
 goHomeButton.addEventListener("click", () => {
     gameOverScreen.style.display = "none";
@@ -85,4 +84,3 @@ goHomeButton.addEventListener("click", () => {
     allSplashScreen.style.display = "flex";
     splashScreen.style.display = "flex";    
 })
-

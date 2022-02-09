@@ -1,62 +1,87 @@
 # Game-Project "PokeRex"
 
+https://becquerelia.github.io/Game-Project-PokeRex/
 
-PokéRex es un sencillo juego inspirado en el clásico dinousaurio T-Rex de Chrome que incluye temática de Pokémon. La mecánica del juego es sencilla: el jugador debe hacer saltar a su pokémon para esquivar los obstáculos que encontrará a lo largo de su recorrido, evitando chocar con ninguno de ellos.
+## Description
 
-El control del juego se reduce únicamente a la barra espaciadora del teclado, la cual hará que el pokémon salte cada vez que sea pulsada por el jugador.
+PokeRex is a simple game inspired by classic Chrome T-Rex dinosaur but with Pokemon theme. The mechanic of game is simple: player must stand up their Pokemon running and jumping to avoid different obstacles that will appear along the way.
 
-El objetivo consiste en que el pokémon continúe su recorrido durante el mayor tiempo posible, siendo este tiempo proporcional a la cantidad de puntos que conseguirá el jugador en su contador. Si el pokémon choca con alguno de los obstáculos durante su recorrido, finaliza el juego.
+Game controls is only about space bar key, which will make the pokemon jump every time it's pressed by the player.
+
+The goal is achieve the Pokemon continue along the path as long as possible; time will be proportional to score the player will get in their counter. If the Pokemon collides with Coronavirus, it will be temporarily infected and player will lose some points as a consequence. But if the Pokemon collides with any other obstacle, the game will finished.
+
 ## MVP
-
-- El juego tiene un pokémon que salta o no según decida el jugador.
-- Van apareciendo diferentes obstáculos a lo largo del recorrido horizontal que realiza el pokémon, pudiendo estos aparecer tanto por la zona superior como por la inferior de la pantalla.
-- El choque del pokémon con cualquiera de los obstáculos pone fin al juego.
-- La puntuación obtenida por el jugador se incrementa conforme aumenta el tiempo que logra mantener al pokémon realizando su recorrido.
-- La dificultad aumenta progresivamente por medio de un incremento gradual de la velocidad de aparición de los obstáculos.
+- The game has a Pokemon that jumps or not depending on the player's decision.
+- Along the way that Pokemon makes, different obstacles will appear both in the upper and lower areas of the screen.
+- Collision between the Pokemon and any obstacle (except Coronavirus) will end the game.
+- The collide with Coronavirus won't end the game, but will temporarily infected the Pokemon and player will lose some points as a consequence.
+- Difficult game will gradually increase by the speed that running Pokemon will reach. 
+- The longer game lasts, the higher score.
 
 ## Backlog
+- Add ranking score.
+- Add option to choose the pokemon icon to play (Pikachu, Charmander, Bulbasaur or Squirtle).
+
 ## Data Structure
 ### main.js
+- Global variables
+- Music data
+- State Management Functions: startGame() {}
+- EventListeners
 ### game.js
+- Class Game
+- Game properties
+- Canvas & Background methods
+- Obstacles & Nature Elements spawn methods
+- Collision methods
+- Game difficult (Speed) method
+- Game score method
+- Pikachu animation (Movement effect) method
+- Game Loop
 ### pikachu.js
+- Class Pikachu
+- Pikachu properties
+- Pikachu draws for run effect methods
+- Pikachu jumping method
 ### obstacles.js
+- Class Snorlax (properties, draw & movement methods)
+- Class Balloon (properties, draw & movement methods)
+- Class Coronavirus (properties, draw & movement methods)
 ### natureElements.js
-## States y States Transitions
+- Class Cloud (properties, draw & movement methods)
+- Class Stratocumulus (properties, draw & movement methods)
 
+## States y States Transitions
 - splashScreen
 - gameScreen
 - gameOverScreen
-## Task
 
-- main - buildDom
-- main - buildSplashScreen
-- main - addEventListener (Click)
-- main - buildGameScreen
-- main - buildGameOverScreen
+## Task
+- html structure
+- css design
+- main - global variables
+- main - startGame function
+- main - addEventListeners (click & keydown types)
 - game - startLoop
 - game - buildCanvas
 - game - updateCanvas
 - game - drawCanvas
 - pikachu - draw
 - pikachu - move
-- game - addEventListener (Keydown)
-- obstacles - draw (snorlax, balloon, gastly, coronavirus)
-- obstacles - move (snorlax, balloon, gastly, coronavirus)
-- obstacles - spawn (snorlax, balloon, gastly, coronavirus)
-- natureElements - draw (cloud, stratocumulus)
-- natureElements - move (cloud, stratocumulus)
-- natureElements - spawn (cloud, stratocumulus)
-- game - addObstacles
-- game - checkCollision
-- game - GameOver
+- obstacles - draw (snorlax, balloon, & coronavirus)
+- obstacles - move (snorlax, balloon & coronavirus)
+- natureElements - draw (single cloud, stratocumulus)
+- natureElements - move (single cloud, stratocumulus)
+- game - add obstacles & nature elements
+- game - spawning obstacles & nature elements
+- game - check collisions
+- game - counter score
+- game - Game over
 
 ## Additional Links
 ### Trello
-
-(link here)
+https://trello.com/b/XBZ65rno/game-project-pokerex
 ### GitHub
-
-(link here)
+https://github.com/Becquerelia/Game-Project-PokeRex
 ### Slides
-
 (link here)

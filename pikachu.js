@@ -1,4 +1,7 @@
 class Pikachu {
+
+    //!PROPERTIES
+
     constructor() {
         this.x = 150;
         this.y = 270;
@@ -14,6 +17,10 @@ class Pikachu {
         this.gravitySpeed = 2.5;
     }
 
+    //!METHODS
+
+    //PIKACHU DRAWS FOR RUN EFFECT
+
     drawPikachu = () => {        
         ctx.drawImage(this.realPikachu, this.x, this.y, this.width, this.height);
     }
@@ -26,15 +33,10 @@ class Pikachu {
         ctx.drawImage(this.pikachu2, this.x, this.y, this.width, this.height);
     }
 
+    //PIKACHU JUMPING
+
     pikachuJump = (event) => {
         if (event.code === "Space" && (this.y === this.groundPosition)) {
-            this.y = this.y - this.jumpSpeed;
-            pikaSound.play();
-        } 
-    }
-
-    pikachuJumpClick = () => {
-        if (this.y === this.groundPosition) {
             this.y = this.y - this.jumpSpeed;
             pikaSound.play();
         } 
@@ -45,5 +47,4 @@ class Pikachu {
             this.y = this.y + this.gravitySpeed;
         }
     }
-
 }

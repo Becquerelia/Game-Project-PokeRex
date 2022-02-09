@@ -1,7 +1,10 @@
 
-//SNORLAX OBSTACLE:
+//! SNORLAX OBSTACLE:
 
 class Snorlax {
+
+    //!PROPERTIES
+
     constructor() {
         this.x = canvas.width;
         this.y = 258;
@@ -12,21 +15,28 @@ class Snorlax {
         this.snorlaxSpeed = 5;
     }
 
+    //!METHODS
+
+    //SNORLAX DRAW
 
     drawSnorlax = () => {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 
+    //SNORLAX MOVEMENT
+
     snorlaxMove = () => {
         this.x = this.x - this.snorlaxSpeed;        
     }
-
 }
 
 
-//BALLOON OBSTACLE:
+//! BALLOON OBSTACLE:
 
 class Balloon {
+
+    //!PROPERTIES
+
     constructor(positionY) {
         this.x = canvas.width + 1500;
         this.y = positionY;
@@ -36,10 +46,15 @@ class Balloon {
         this.img.src = "./Images/rocketballoon.png"
     }
 
+    //!METHODS
+
+    //BALLOON DRAW
 
     drawBalloon = () => {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
+
+    //BALLOON MOVEMENT
 
     balloonMove = () => {
         this.x = this.x - 8;
@@ -48,9 +63,12 @@ class Balloon {
 }
 
 
-// CORONAVIRUS OBSTACLE:
+//! CORONAVIRUS OBSTACLE:
 
 class Coronavirus {
+
+    //!PROPERTIES
+
     constructor() {
         this.x = canvas.width + 3600;
         this.y = 240;
@@ -60,14 +78,17 @@ class Coronavirus {
         this.img.src = "./Images/coronavirus.png"
     }
 
+    //!METHODS
+
+    //CORONAVIRUS DRAW
 
     drawCoronavirus = () => {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 
+    //CORONAVIRUS MOVEMENT
+
     coronavirusMove = () => {
         this.x = this.x - 5;
     }
-
 }
-
