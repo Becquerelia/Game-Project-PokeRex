@@ -33,6 +33,13 @@ class Pikachu {
         } 
     }
 
+    pikachuJumpClick = () => {
+        if (this.y === this.groundPosition) {
+            this.y = this.y - this.jumpSpeed;
+            pikaSound.play();
+        } 
+    }
+
     pikachuGravity = () => {
         if (this.y < this.groundPosition) {
             this.y = this.y + this.gravitySpeed;

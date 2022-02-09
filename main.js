@@ -58,6 +58,10 @@ window.addEventListener("keydown", (event) => {
     newGame.pikachu.pikachuJump(event)
 })
 
+window.addEventListener("click", () => {
+    newGame.pikachu.pikachuJumpClick();
+})
+
 restartButton.addEventListener("click", () => {    
     newGame = new Game();
 });
