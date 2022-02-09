@@ -84,4 +84,4 @@ https://trello.com/b/XBZ65rno/game-project-pokerex
 ### GitHub
 https://github.com/Becquerelia/Game-Project-PokeRex
 ### Slides
-(link here)
+https://docs.google.com/presentation/d/17Bi8Iu7p6kYMrqAgY5sXWIUQnyEehos6mkuytlb9c1o/edit?usp=sharing
