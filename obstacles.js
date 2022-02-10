@@ -69,9 +69,9 @@ class Coronavirus {
 
     //!PROPERTIES
 
-    constructor() {
-        this.x = canvas.width + 3600;
-        this.y = 240;
+    constructor(positionY) {
+        this.x = canvas.width + 200;
+        this.y = positionY;
         this.width = 40;
         this.height = 40;
         this.img = new Image()
