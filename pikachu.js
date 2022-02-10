@@ -12,11 +12,11 @@ class Pikachu {
         this.pikachu2 = new Image ();
         this.pikachu2.src = "./Images/pikagif2.gif"
         this.realPikachu = this.pikachu1;
-        this.jumpSpeed = 231;
+        this.jumpSpeed = 238;
         this.groundPosition = 270;
         this.gravitySpeed = 3.5;
     }
-
+8
     //!METHODS
 
     //PIKACHU DRAWS FOR RUN EFFECT
