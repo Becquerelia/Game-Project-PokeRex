@@ -15,13 +15,13 @@ let newGame;
 
 //GAME SOUND
 let gameSound = new Audio("./Music/LeaderBattleGameOn.mp4");
-gameSound.volume = 0.1;
+gameSound.volume = 0.08;
 gameSound.preload ="auto";
 gameSound.load();
 
 //GAMEOVER SOUND
 let gameOverSound = new Audio ("./Music/RivalAppearsGameOver.mp3");
-gameOverSound.volume = 0.1;
+gameOverSound.volume = 0.07;
 gameOverSound.preload ="auto";
 gameOverSound.load();
 
